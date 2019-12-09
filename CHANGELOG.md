@@ -2,11 +2,29 @@
 
 ## Unreleased
 
-- [hub] feat: Add more span functions (#2161)
-- [integrations] feat: Change `Tracing` integration (#2161)
-- [browser] feat: Refactor breadcrumbs integration to allow for custom handlers
-- [utils] feat: Move insturment to utils
+Coming soon...
+
+## 5.10.2
+
+- [browser] fix: Always trigger default browser onerror handler (#2348)
+- [browser] fix: Restore correct `functionToString` behavior for updated `fill` method (#2346)
+- [integrations] ref: Allow for backslashes in unix paths (#2319)
+- [integrations] feat: Support Windows-style path in RewriteFrame iteratee (#2319)
+
+## 5.10.1
+
+- [apm] fix: Sent correct span id with outgoing requests (#2341)
+- [utils] fix: Make `fill` and `wrap` work nicely together to prevent double-triggering instrumentations (#2343)
+- [node] ref: Require `https-proxy-agent` only when actually needed (#2334)
+
+## 5.10.0
+
+- [hub] feat: Update `span` implementation (#2161)
 - [apm] feat: Add `@sentry/apm` package
+- [integrations] feat: Change `Tracing` integration (#2161)
+- [utils] feat: Introduce `instrument` util to allow for custom handlers
+- [utils] Optimize `supportsNativeFetch` with a fast path that avoids DOM I/O (#2326)
+- [utils] feat: Add `isInstanceOf` util for safety reasons
 
 ## 5.9.1
 
