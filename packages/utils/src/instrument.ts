@@ -106,6 +106,14 @@ function instrumentConsole(): void {
 
     fill(global.console, level, function(originalConsoleLevel: () => any): Function {
       return function(...args: any[]): void {
+        const err: Error = new Error();
+
+        if (err.stack) {
+          const stack: string[] = err.stack.toString().split(/\r\n|\n/);
+
+          args.push(`[${stack[2].replace(/.*\//, '').replace(/:\d+\)?$/, '')}]`);
+        }
+
         triggerHandlers('console', { args, level });
 
         // this fails for some browsers. :(
