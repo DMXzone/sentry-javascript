@@ -139,7 +139,7 @@ export class GlobalHandlers implements Integration {
     this._global.onunhandledrejection = function(e: any): boolean {
       let error = e;
       try {
-        error = e && 'reason' in e ? e.reason : e;
+        error = e && 'reason' in e ? e.reason : e.detail && e.detail.reason ? e.detail.reason : e;
       } catch (_oO) {
         // no-empty
       }
